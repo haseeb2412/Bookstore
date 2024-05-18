@@ -6,3 +6,8 @@
 body{
     font-family: "Poppins", sans-serif;
 }
+
+
+.slick-dots li button:before{
+    font-size: 44px;
+}
