@@ -70,5 +70,21 @@
         "price":0,
         "category":"free",
         "image":"https://img.freepik.com/free-vector/gradient-stack-books-illustration_23-2149347684.jpg?t=st=1716010727~exp=1716014327~hmac=dba7eeb33dd8929907877fe4b0ccee14bbf0ba7c12a223d18bb43651beb365c8&w=826"
+    },
+    {
+        "id":10,
+        "name":"Story Book",
+        "title":"lorem jabshd ajsdha j djsfh sjdh sidf sdh",
+        "price":0,
+        "category":"free",
+        "image":"https://img.freepik.com/free-vector/gradient-stack-books-illustration_23-2149347684.jpg?t=st=1716010727~exp=1716014327~hmac=dba7eeb33dd8929907877fe4b0ccee14bbf0ba7c12a223d18bb43651beb365c8&w=826"
+    },
+    {
+        "id":11,
+        "name":"Horror 02 Book",
+        "title":"lorem jabshd ajsdha j djsfh sjdh sidf sdh",
+        "price":20,
+        "category":"Horror Book",
+        "image":"https://img.freepik.com/free-vector/gradient-stack-books-illustration_23-2149347684.jpg?t=st=1716010727~exp=1716014327~hmac=dba7eeb33dd8929907877fe4b0ccee14bbf0ba7c12a223d18bb43651beb365c8&w=826"
     }
 ]

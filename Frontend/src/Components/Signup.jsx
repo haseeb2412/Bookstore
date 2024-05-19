@@ -1,8 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Login from './Login'
+import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+
 
 function Signup() {
+
+    const {
+        register,
+        // handleSubmit,
+        formState: { errors },
+      } = useForm();
   return (
     <>
     <div className="flex h-screen items-center justify-center">
@@ -27,14 +36,14 @@ function Signup() {
                 type="text"
                 placeholder="Enter your fullname"
                 className="w-80 px-3 py-1 border rounded-md outline-none"
-                // {...register("fullname", { required: true })}
+                {...register("fullname", { required: true })}
               />
               <br />
-              {/* {errors.fullname && (
+              {errors.fullname && (
                 <span className="text-sm text-red-500">
                   This field is required
                 </span>
-              )} */}
+              )}
             </div>
             {/* Email */}
             <div className="mt-4 space-y-2">
@@ -44,14 +53,14 @@ function Signup() {
                 type="email"
                 placeholder="Enter your email"
                 className="w-80 px-3 py-1 border rounded-md outline-none"
-                // {...register("email", { required: true })}
+                {...register("email", { required: true })}
               />
               <br />
-              {/* {errors.email && (
+              {errors.email && (
                 <span className="text-sm text-red-500">
                   This field is required
                 </span>
-              )} */}
+              )}
             </div>
             {/* Password */}
             <div className="mt-4 space-y-2">
@@ -61,14 +70,14 @@ function Signup() {
                 type="text"
                 placeholder="Enter your password"
                 className="w-80 px-3 py-1 border rounded-md outline-none"
-                // {...register("password", { required: true })}
+                {...register("password", { required: true })}
               />
               <br />
-              {/* {errors.password && (
+              {errors.password && (
                 <span className="text-sm text-red-500">
                   This field is required
                 </span>
-              )} */}
+              )}
             </div>
             {/* Button */}
             <div className="flex justify-around mt-4">

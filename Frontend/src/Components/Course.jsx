@@ -1,11 +1,26 @@
-import React from 'react'
-import Courses from '../Courses/Courses'
-import { Link } from 'react-router-dom'
-import list from "../../public/list.json"
-import Cards from './Cards'
+import { useEffect, useState } from "react"
+import axios from 'axios'
+import {Link} from "react-router-dom"
+import Cards from "./Cards"
+function Course(){
+
+  const [book,setBook] = useState([]);
+  useEffect(()=>{
+    const getBook = async()=>{
+      try {
+          const res =await axios.get("http://localhost:5001/book");
+          // console.log(res.data);
+          setBook(res.data);
+      } catch (error) {
+        console.log("getting data error");
+      }
+    }
+
+    getBook();
+  },[])
 
 
-function Course() {
+
   return (
     <>
          <div className=" max-w-screen-2xl container mx-auto md:px-20 px-4">
@@ -30,7 +45,7 @@ function Course() {
           </Link>
         </div>
         <div className="mt-12 grid grid-cols-1 md:grid-cols-4">
-          {list.map((item) => (
+        {Array.isArray(book) && book.map((item) => (
             <Cards key={item.id} item={item} />
           ))}
         </div>
@@ -40,3 +55,20 @@ function Course() {
 }
 
 export default Course
+
+
+
+// const [book,setBook] = useState([]);
+// useEffect(()=>{
+//   const getBook = async()=>{
+//     try {
+//         const data =await axios.get("http://localhost:5001/book");
+//         console.log(data.data);
+//         setBook(data);
+//     } catch (error) {
+//       console.log("getting data error");
+//     }
+//   }
+
+//   getBook();
+// },[])

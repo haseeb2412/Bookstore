@@ -3,23 +3,26 @@ import list from "../../public/list.json";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-// import axios from "axios"
+import axios from "axios"
 import Cards from "./Cards";
 
 function FreeBook() {
-  const filterData = list.filter((data) => data.category === "free");
-  // console.log("hello",list);
-  // console.log(filterData);
-
   const [book, setBook] = useState([]);
+
   useEffect(() => {
     const getBook = async () => {
       try {
-        // const res = await axios.get("http://localhost:4001/book");
+        const res = await axios.get("http://localhost:5001/book");
+        // console.log("Unfiltered Response:", res.data);
 
-        const finaldata = list.filter((data) => data.category === "Free");
-        // console.log(finaldata);
-        setBook(finaldata);
+        // res.data.forEach(item => {
+        //   console.log(`Item: ${item.id}, Category: ${item.category}`);
+        // });
+
+        const response = res.data.filter((data) => data.category.toLowerCase() === "free");
+
+        // console.log("Filtered Response:", response);
+        setBook(response);
       } catch (error) {
         console.log(error);
       }
@@ -76,7 +79,7 @@ function FreeBook() {
 
         <div>
           <Slider {...settings}>
-            {filterData.map((item) => (
+            {Array.isArray(book) && book.map((item) => (
               <Cards item={item} key={item.id} />
               
             ))}
