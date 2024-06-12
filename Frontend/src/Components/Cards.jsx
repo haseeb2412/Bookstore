@@ -29,7 +29,7 @@ function Cards({item}) {
 }
 
 export default Cards
-// export default Cards
+
 
 
 
